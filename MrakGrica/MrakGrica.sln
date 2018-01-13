@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrakGrica.Plugins", "MrakGrica.Plugins.csproj", "{BE345DFA-64F6-690F-0AD0-F9361DF74965}"
-EndProject
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrakGrica", "MrakGrica.csproj", "{D92933FA-FBCD-776A-5123-128B6DCBA45C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrakGrica.Plugins", "MrakGrica.Plugins.csproj", "{BE345DFA-64F6-690F-0AD0-F9361DF74965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D92933FA-FBCD-776A-5123-128B6DCBA45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D92933FA-FBCD-776A-5123-128B6DCBA45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92933FA-FBCD-776A-5123-128B6DCBA45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92933FA-FBCD-776A-5123-128B6DCBA45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE345DFA-64F6-690F-0AD0-F9361DF74965}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

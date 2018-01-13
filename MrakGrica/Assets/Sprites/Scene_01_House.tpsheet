@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e484ef5fca5a6647283ea3ed9122025c:6d9a033fc5d0a651894699f645dc6430:fc946f06b53e2ad17f80bca312288e2d$
+#
+:format=40300
+:texture=Scene_01_House.png
+:size=3500x3000
+:normalmap=Scene_01_House_n.png
+:pivotpoints=enabled
+:borders=disabled
+
+Scene_01_House;0;0;3500;3000; 0.5;0.5; 0;0;0;0; 4;3500;0;0;0;0;3000;3500;3000; 2;1;2;3;0;1;3
