@@ -2,11 +2,11 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/Sprites/Scene_01_House.tpsheet
+- Assets/Sprites/scene01/Scene_01_House.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/Sprites/Scene_01_House.png
+- Assets/Sprites/scene01/Scene_01_House.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
-- Assets/Sprites/Scene_01_House_n.png
+- Assets/Sprites/scene01/Scene_01_House_n.png
 enableDebugOutput: 0
