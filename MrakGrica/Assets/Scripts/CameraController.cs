@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraController : MonoBehaviour {
-
+public class CameraController : MonoBehaviour
+{
     public Transform player;  
     public float minX, minY, maxX, maxY;
-
 
     void Start()
     {
@@ -15,8 +12,7 @@ public class CameraController : MonoBehaviour {
 
     void LateUpdate()
     {
-        float x = Mathf.Clamp(player.position.x, minX, maxX);
-        float y = Mathf.Clamp(player.position.y, minY, maxY);
+        float x = Mathf.Clamp(player.position.x, minX, maxX), y = Mathf.Clamp(player.position.y, minY, maxY);
         transform.position = new Vector2(x, y);
     }
 }
