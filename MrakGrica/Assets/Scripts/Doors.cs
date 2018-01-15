@@ -66,19 +66,19 @@ public class Doors : MonoBehaviour
         if (ID == "KPV1")
             Player.transform.position = new Vector2(18.5f, -5.9f);
         else if (ID == "K0V1")
-            Player.transform.position = new Vector2(18.5f, -1.2f);
+            Player.transform.position = new Vector2(9.04f, -0.52f);
         else if (ID == "K0V2")
             Player.transform.position = new Vector2(18.5f, -12.6f);
         else if (ID == "K1V1")
-            Player.transform.position = new Vector2(18.5f, 3.75f);
+            Player.transform.position = new Vector2(9.01f, 3.98f);
         else if (ID == "K1V2")
-            Player.transform.position = new Vector2(9.2f, -5.8f);
+            Player.transform.position = new Vector2(-0.52f, -5.92f);
         else if (ID == "K2V1")
-            Player.transform.position = new Vector2(0.0f, 8.5f);
+            Player.transform.position = new Vector2(-9.42f, 9.37f);
         else if (ID == "K2V2")
-            Player.transform.position = new Vector2(0.0f, -1.15f);
+            Player.transform.position = new Vector2(-9.54f, -0.52f);
         else if (ID == "K3V1")
-            Player.transform.position = new Vector2(0.0f, 3.7f);
+            Player.transform.position = new Vector2(-9.54f, 4.47f);
         else if (ID == "K0O1")
             Player.transform.position = new Vector2(-3.49f, -11.6f);
         else if (ID == "K-1O1")

@@ -3,7 +3,7 @@
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D Player;
-    private float speed = 5;
+    private float speed = 6;
 
     private Animator animator;
 
@@ -19,5 +19,6 @@ public class Movement : MonoBehaviour
         Vector2 tempVect = new Vector2(h, v);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
         Player.MovePosition((Vector2)Player.transform.position + tempVect);
+
     }
 }
