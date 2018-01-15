@@ -5,6 +5,7 @@ public class Doors : MonoBehaviour
     public string ID;
     public Rigidbody2D Player;
     public SpriteRenderer Sprite;
+    public AudioSource DoorsOpen, DoorsClose;
     private bool CanTeleport = false, Pressed = false, Faded = false;
     private float minimum = 0.0f, maximum = 1f, speed = 1.5f, threshold = 0.05f;
 
@@ -25,6 +26,7 @@ public class Doors : MonoBehaviour
             {
                 Pressed = true;
                 Player.constraints = RigidbodyConstraints2D.FreezeAll;
+                DoorsOpen.Play();
             }
                 
         float step = speed * Time.deltaTime;
@@ -79,5 +81,6 @@ public class Doors : MonoBehaviour
 
         Pressed = false;
         Player.constraints = RigidbodyConstraints2D.FreezeRotation;
+        DoorsClose.Play();
     }
 }
