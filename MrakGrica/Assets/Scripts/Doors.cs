@@ -4,8 +4,9 @@ public class Doors : MonoBehaviour
 {
     public string ID;
     public Rigidbody2D Player;
-    public SpriteRenderer Sprite;
+    public SpriteRenderer Sprite, IzlazSprite, Key;
     public AudioSource DoorsOpen, DoorsClose;
+    public GameObject DestroyableCollider;
     private bool CanTeleport = false, Pressed = false, Faded = false;
     private float minimum = 0.0f, maximum = 1f, speed = 1.5f, threshold = 0.05f;
 
@@ -28,7 +29,19 @@ public class Doors : MonoBehaviour
                 Player.constraints = RigidbodyConstraints2D.FreezeAll;
                 DoorsOpen.Play();
             }
-                
+
+        if (Input.GetKeyDown("f"))
+            if (ID == "Stol")
+                Destroy(Key);
+
+        if (Input.GetKeyDown("g"))
+            if (ID == "Izlaz")
+            {
+                Destroy(DestroyableCollider.GetComponent<Collider2D>());
+                Destroy(IzlazSprite);
+                DoorsOpen.Play();
+            }
+
         float step = speed * Time.deltaTime;
         if (Pressed && !Faded)
         {
