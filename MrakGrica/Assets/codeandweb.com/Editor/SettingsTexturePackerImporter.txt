@@ -3,10 +3,19 @@ importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/scene01/Scene_01_House.tpsheet
+- Assets/Sprites/scene02/Scene_02_Forest.tpsheet
+- Assets/Sprites/scene02/Scene_02_Forest_Mine_Entrance.tpsheet
+- Assets/Sprites/scene03/Scene_03_Mine.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/scene01/Scene_01_House.png
+- Assets/Sprites/scene02/Scene_02_Forest.png
+- Assets/Sprites/scene02/Scene_02_Forest_Mine_Entrance.png
+- Assets/Sprites/scene03/Scene_03_Mine.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 - Assets/Sprites/scene01/Scene_01_House_n.png
+- Assets/Sprites/scene02/Scene_02_Forest_n.png
+- Assets/Sprites/scene02/Scene_02_Forest_Mine_Entrance_n.png
+- Assets/Sprites/scene03/Scene_03_Mine_n.png
 enableDebugOutput: 0

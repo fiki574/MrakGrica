@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:ca8867e0d15883b9f9cf3f455be9ac6b:d241c43008158a55be5e81b00a1ab7ed:d4d30e6d69ec23c2a58a4569436442a3$
+#
+:format=40300
+:texture=Scene_03_Mine.png
+:size=3000x3000
+:normalmap=Scene_03_Mine_n.png
+:pivotpoints=enabled
+:borders=disabled
+
+Scene_03_Mine;0;0;3000;3000; 0.5;0.5; 0;0;0;0; 4;3000;0;0;0;0;3000;3000;3000; 2;1;2;3;0;1;3

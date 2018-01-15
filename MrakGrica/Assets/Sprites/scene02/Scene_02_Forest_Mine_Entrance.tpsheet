@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:bf578a51e40cd1ee8814fb62d2bb4980:5f2d6030e909a4e9cb0454f3401bbc3d:59308c19fa571b8cc24704fed938757b$
+#
+:format=40300
+:texture=Scene_02_Forest_Mine_Entrance.png
+:size=360x420
+:normalmap=Scene_02_Forest_Mine_Entrance_n.png
+:pivotpoints=enabled
+:borders=disabled
+
+Scene_02_Forest_Mine_Entrance;0;2;357;418; -4.2521008403361344;0.992822966507177; 0;0;0;0; 40;169;9;165;0;159;0;143;29;152;34;357;20;317;20;324;69;302;136;298;179;274;200;246;171;256;20;200;20;207;122;195;188;134;209;102;258;149;338;199;333;273;403;273;418;357;418;81;187;81;176;50;195;51;201;33;201;23;217;37;222;26;237;61;309;78;313;11;285;0;285;0;313;11;313;190;374;172;378;190;396; 26;0;2;3;0;1;2;0;3;4;20;21;22;10;20;22;17;18;19;19;10;15;16;17;19;15;16;19;19;20;10;12;13;14;11;12;14;11;14;15;10;11;15;9;10;22;5;9;22;8;9;5;5;6;7;8;5;7;23;24;25;27;28;29;26;27;29;30;31;32;34;35;36;33;34;36;37;38;39
