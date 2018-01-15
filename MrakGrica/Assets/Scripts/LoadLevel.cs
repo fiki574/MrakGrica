@@ -3,7 +3,6 @@
 public class LoadLevel : MonoBehaviour
 {
     public string ID;
-    public Rigidbody2D Player;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
