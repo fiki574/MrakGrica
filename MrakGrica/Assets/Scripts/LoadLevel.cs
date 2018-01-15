@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -9,8 +8,10 @@ public class LoadLevel : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (ID == "LoadLevel2")
-            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+            Initiate.Fade("Level2", Color.black, 0.50f);
         else if (ID == "LoadLevel3")
-            Debug.Log("Level 3 not yet present.");
+            Initiate.Fade("Level3", Color.black, 0.50f);
+        else
+            return;
     }
 }

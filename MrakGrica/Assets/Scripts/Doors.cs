@@ -64,10 +64,20 @@ public class Doors : MonoBehaviour
             Player.transform.position = new Vector2(0.0f, -1.15f);
         else if (ID == "K3V1")
             Player.transform.position = new Vector2(0.0f, 3.7f);
-        else
-            return;
+        else if (ID == "K0O1")
+            Player.transform.position = new Vector2(-3.49f, -11.6f);
+        else if (ID == "K-1O1")
+            Player.transform.position = new Vector2(11.66f, -4.53f);
+        else if (ID == "K-1O2")
+            Player.transform.position = new Vector2(-3.43f, -18.2f);
+        else if (ID == "K-2O1")
+            Player.transform.position = new Vector2(11.82f, -11.4f);
+        else if (ID == "K-2O2")
+            Player.transform.position = new Vector2(-3.5f, -25.8f);
+        else if (ID == "K-3O1")
+            Player.transform.position = new Vector2(11.64f, -18.3f);
 
         Pressed = false;
-        Player.constraints = RigidbodyConstraints2D.None;
+        Player.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

@@ -5,3 +5,6 @@ sceneSetups:
 - path: Assets/Scenes/Level2.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/Scenes/Level3.unity
+  isLoaded: 0
+  isActive: 0
