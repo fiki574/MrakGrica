@@ -87,29 +87,18 @@
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\Doors.cs" />
-    <Compile Include="Assets\Scripts\DragMe.cs" />
-    <Compile Include="Assets\Scripts\DragPanel.cs" />
-    <Compile Include="Assets\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\KeyLock.cs" />
     <Compile Include="Assets\Scripts\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
-    <Compile Include="Assets\Scripts\PanelManager.cs" />
-    <Compile Include="Assets\Scripts\ResizePanel.cs" />
-    <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
-    <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
-    <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Fader.cs" />
     <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Initiate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
-    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-    <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
     <None Include="Assets\codeandweb.com\Readme.txt" />
   </ItemGroup>

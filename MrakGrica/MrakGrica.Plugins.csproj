@@ -114,10 +114,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
-    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-    <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
     <None Include="Assets\codeandweb.com\Readme.txt" />
   </ItemGroup>

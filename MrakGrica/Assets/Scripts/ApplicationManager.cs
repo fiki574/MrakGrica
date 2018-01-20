@@ -18,6 +18,6 @@ public class ApplicationManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        Initiate.Fade("Menu 3D", Color.black, 0.40f);
+        //Initiate.Fade("Menu 3D", Color.black, 0.40f);
     }
 }
