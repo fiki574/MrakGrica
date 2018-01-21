@@ -16,21 +16,27 @@ public class Movement : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         facingRight = true;
     }
+	void Update()
+	{
+		HandleInput();
+	}
 
-    void Update()
+    void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
-		HandleMovement (h);
-		Flip (h);
-		HandleInput();
+		HandleMovement(h);
+		Flip(h);
 		HandleShoot();
-		Reset ();
+		Reset();
     }
 
 	private void HandleMovement(float h)
     {
-        animator.SetFloat("speed", Mathf.Abs(h));
-        player.velocity = new Vector2(h * speed, player.velocity.y);
+		if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Shoot")) 
+		{
+			player.velocity = new Vector2(h * speed, player.velocity.y);
+		}
+		animator.SetFloat("speed", Mathf.Abs(h));
     }
 
 	private void Flip(float h)
@@ -46,8 +52,11 @@ public class Movement : MonoBehaviour
 
 	private void HandleShoot()
 	{
-		if(attack)
-			animator.SetTrigger("attack");
+		if (attack) 
+		{
+			animator.SetTrigger ("attack");
+			player.velocity = Vector2.zero;
+		}
 	}
 
 	private void HandleInput()
