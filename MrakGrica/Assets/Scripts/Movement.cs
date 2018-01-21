@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class Movement : MonoBehaviour
     private bool facingRight;
     private Animator animator;
 	private bool attack;
+
+    public Text Score;
 
 	[SerializeField]
 	private float speed = 4;
@@ -56,8 +59,30 @@ public class Movement : MonoBehaviour
 		{
 			animator.SetTrigger ("attack");
 			player.velocity = Vector2.zero;
-		}
-	}
+
+            //zvuk pucanja
+
+            RaycastHit2D hit;
+            if(facingRight)
+                hit = Physics2D.Raycast(new Vector2(player.position.x + 2f, player.position.y - 0.5f), new Vector2(player.position.x + 100f, player.position.y - 0.5f));
+            else
+                hit = Physics2D.Raycast(new Vector2(player.position.x - 2f, player.position.y - 0.5f), new Vector2(player.position.x - 100f, player.position.y - 0.5f));
+
+            bool valid = hit.collider.GetComponent<Rigidbody2D>().ToString().Contains("Zombie");
+            if(valid)
+            {
+                Enemy zombie = hit.collider.GetComponent<Enemy>();
+                zombie.TakeDamage(35f);
+                if (zombie.GetHealth() == 0.0f)
+                {
+                    int score = System.Convert.ToInt32(Score.text.Remove(0, 8));
+                    score += 50;
+                    Score.text = "POINTS: " + score;
+                    zombie.Kill();
+                }
+            }
+        }
+    }
 
 	private void HandleInput()
 	{
