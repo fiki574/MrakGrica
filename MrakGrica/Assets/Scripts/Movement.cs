@@ -63,13 +63,13 @@ public class Movement : MonoBehaviour
             //zvuk pucanja
 
             RaycastHit2D hit;
-            if(facingRight)
+            if (facingRight)
                 hit = Physics2D.Raycast(new Vector2(player.position.x + 2f, player.position.y - 0.5f), new Vector2(player.position.x + 100f, player.position.y - 0.5f));
             else
                 hit = Physics2D.Raycast(new Vector2(player.position.x - 2f, player.position.y - 0.5f), new Vector2(player.position.x - 100f, player.position.y - 0.5f));
 
             bool valid = hit.collider.GetComponent<Rigidbody2D>().ToString().Contains("Zombie");
-            if(valid)
+            if (valid)
             {
                 Enemy zombie = hit.collider.GetComponent<Enemy>();
                 zombie.TakeDamage(35f);

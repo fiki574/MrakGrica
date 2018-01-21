@@ -11,6 +11,31 @@ public class Enemy : MonoBehaviour {
         Health = 100;
 	}
 
+    void Update()
+    {
+        RaycastHit2D detect_right, detect_left;
+        Rigidbody2D zombie = gameObject.GetComponent<Rigidbody2D>(), player_left, player_right;
+
+        detect_right = Physics2D.Raycast(new Vector2(zombie.position.x + 2.0f, zombie.position.y), new Vector2(zombie.position.x + 3.0f, zombie.position.y));
+        detect_left = Physics2D.Raycast(new Vector2(zombie.position.x - 2.0f, zombie.position.y), new Vector2(zombie.position.x - 3.0f, zombie.position.y));
+
+        player_right = detect_right.collider.GetComponent<Rigidbody2D>();
+        player_left = detect_left.collider.GetComponent<Rigidbody2D>();
+
+        bool valid_right = player_right.ToString().Contains("Player"), valid_left = player_left.ToString().Contains("Player");
+
+        PlayCont player;
+        if (valid_right)
+            player = player_right.GetComponent<PlayCont>();
+        else if (valid_left)
+            player = player_left.GetComponent<PlayCont>();
+        else
+            player = null;
+
+        if(player != null)
+            player.TakeDamage(1.0f); //promijenit ovo nekak pošto brzo skida health zbog Update() brzine
+    }
+
     public void TakeDamage(float amount)
     {
         Health -= amount;
