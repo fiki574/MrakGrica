@@ -5,11 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     private float Health;
+    private Animator animator;
+    private float timer;
 
-	void Start ()
+    void Start ()
     {
         Health = 100;
-	}
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -32,9 +35,23 @@ public class Enemy : MonoBehaviour {
         else
             player = null;
 
-        if(player != null)
-            player.TakeDamage(1.0f); //promijenit ovo nekak pošto brzo skida health zbog Update() brzine
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (player != null)
+        {
+            if (timer <= 0)
+            {
+                animator.SetTrigger("PlayerClose");
+                player.TakeDamage(15.0f);
+                timer = 2.0f;
+                //promijenit ovo nekak pošto brzo skida health zbog Update() brzine
+            }
+        }
     }
+
 
     public void TakeDamage(float amount)
     {

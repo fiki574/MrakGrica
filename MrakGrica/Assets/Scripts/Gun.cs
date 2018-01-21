@@ -11,6 +11,9 @@ public class Gun : MonoBehaviour {
     {
         if (Input.GetKeyDown("f"))
             if (Player.GetComponent<Collider2D>().IsTouching(GunObj.GetComponent<Collider2D>()))
+            {
                 Destroy(GunObj);
+                Player.GetComponent<Animator>().SetTrigger("gun");
+            }
     }
 }
