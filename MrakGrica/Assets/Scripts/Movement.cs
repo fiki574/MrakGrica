@@ -7,33 +7,51 @@ public class Movement : MonoBehaviour
     private bool facingRight;
     private Animator animator;
 	private bool attack;
+    private AudioSource audioShoot;
+    private AudioSource audioReload;
+    private int mag;
+    private bool reload;
 
     public Text Score;
 
 	[SerializeField]
 	private float speed = 4;
 
+    [SerializeField]
+    private AudioClip gunShoot;
+
+    [SerializeField]
+    private AudioClip gunReload;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         player = GetComponent<Rigidbody2D>();
         facingRight = true;
+        mag = 7;
     }
-	void Update()
+	private void Update()
 	{
 		HandleInput();
 	}
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
 		HandleMovement(h);
 		Flip(h);
 		HandleShoot();
+        HandleReload();
 		Reset();
     }
 
-	private void HandleMovement(float h)
+    private void Awake()
+    {
+        audioShoot = AddAudio(gunShoot, false, false, 0.75f);
+        audioReload = AddAudio(gunReload, false, false, 0.75f);
+    }
+
+    private void HandleMovement(float h)
     {
 		if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Shoot")) 
 		{
@@ -61,6 +79,12 @@ public class Movement : MonoBehaviour
 			player.velocity = Vector2.zero;
 
             //zvuk pucanja
+            audioShoot.Play();
+
+            if (mag > 1)
+                mag--;
+            else if (mag == 1)
+                reload = true;
 
             RaycastHit2D hit;
             if (facingRight)
@@ -88,11 +112,42 @@ public class Movement : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Fire1"))
 			attack = true;
+        if (Input.GetKeyDown("r"))
+            reload = true;
 	}
 
 	private void Reset()
 	{
 		attack = false;
-	}
+        reload = false;
+    }
+
+    private AudioSource AddAudio(AudioClip clip, bool loop, bool playAwake, float vol)
+    {
+
+        AudioSource newAudio = gameObject.AddComponent<AudioSource>();
+
+        newAudio.clip = clip;
+        newAudio.loop = loop;
+        newAudio.playOnAwake = playAwake;
+        newAudio.volume = vol;
+
+        return newAudio;
+
+    }
+
+    private void HandleReload()
+    {
+        if (reload)
+        {
+            animator.SetTrigger("reload");
+
+            player.velocity = Vector2.zero;
+
+            audioReload.Play();
+
+            mag = 7;
+        }
+    } 
 
 }
