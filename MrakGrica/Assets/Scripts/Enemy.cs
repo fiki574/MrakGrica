@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour {
         RaycastHit2D detect_right, detect_left;
         Rigidbody2D zombie = gameObject.GetComponent<Rigidbody2D>(), player_left, player_right;
 
-        detect_right = Physics2D.Raycast(new Vector2(zombie.position.x + 2.0f, zombie.position.y), new Vector2(zombie.position.x + 3.0f, zombie.position.y));
-        detect_left = Physics2D.Raycast(new Vector2(zombie.position.x - 2.0f, zombie.position.y), new Vector2(zombie.position.x - 3.0f, zombie.position.y));
+        detect_right = Physics2D.Raycast(new Vector2(zombie.position.x + 1.0f, zombie.position.y), new Vector2(zombie.position.x + 2.0f, zombie.position.y));
+        detect_left = Physics2D.Raycast(new Vector2(zombie.position.x - 1.0f, zombie.position.y), new Vector2(zombie.position.x - 2.0f, zombie.position.y));
 
         player_right = detect_right.collider.GetComponent<Rigidbody2D>();
         player_left = detect_left.collider.GetComponent<Rigidbody2D>();

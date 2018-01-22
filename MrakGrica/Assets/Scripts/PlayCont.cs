@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayCont : MonoBehaviour {
 
-    private float Health;
+    public static float Health = 100;
     public Text HealthUI;
 
     void Start()
     {
-        Health = 100;
     }
 
     public void TakeDamage(float amount)

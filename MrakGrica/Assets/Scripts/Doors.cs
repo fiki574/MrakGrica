@@ -35,15 +35,6 @@ public class Doors : MonoBehaviour
                 StartFade(Color.black, 2.5f);
                 StartCoroutine(Teleport());
             }
-
-
-        //test kod
-        if (Input.GetKeyDown("g"))
-        {
-            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
-            Spawn spawn = spawnobj.GetComponent<Spawn>();
-            spawn.CreateZombie(1, 1, 1);
-        }
     }
 
     IEnumerator Teleport()
@@ -53,29 +44,59 @@ public class Doors : MonoBehaviour
         if (ID == "KPV1")
             Player.transform.position = new Vector2(9.56f, -6.52f);
         else if (ID == "K0V1")
+        {
             Player.transform.position = new Vector2(9.04f, -0.52f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, 1, 1);
+        }
         else if (ID == "K0V2")
             Player.transform.position = new Vector2(9.56f, -13.1f);
         else if (ID == "K1V1")
+        { 
             Player.transform.position = new Vector2(9.01f, 3.98f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, 2, 1);
+        }
         else if (ID == "K1V2")
             Player.transform.position = new Vector2(-0.52f, -5.92f);
         else if (ID == "K2V1")
+        { 
             Player.transform.position = new Vector2(-9.42f, 9.37f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, 3, 1);
+        }
         else if (ID == "K2V2")
             Player.transform.position = new Vector2(-9.54f, -0.52f);
         else if (ID == "K3V1")
             Player.transform.position = new Vector2(-9.54f, 4.47f);
         else if (ID == "K0O1")
+        {
             Player.transform.position = new Vector2(2.38f, -11.98f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, -1, 3);
+        } 
         else if (ID == "K-1O1")
+        {
             Player.transform.position = new Vector2(-12.82f, -18.93f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, -2, 3);
+        }
         else if (ID == "K-1O2")
             Player.transform.position = new Vector2(2.38f, -5.4f);
         else if (ID == "K-2O1")
             Player.transform.position = new Vector2(-12.82f, -11.98f);
         else if (ID == "K-2O2")
+        {
             Player.transform.position = new Vector2(-12.8f, -26.31f);
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, -3, 3);
+        }  
         else if (ID == "K-3O1")
             Player.transform.position = new Vector2(2.3f, -18.59f);
 

@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private int mag;
     private bool reload;
 
+    public static int ScoreN;
     public Text Score;
 
 	[SerializeField]
@@ -77,8 +78,6 @@ public class Movement : MonoBehaviour
 		{
 			animator.SetTrigger ("attack");
 			player.velocity = Vector2.zero;
-
-            //zvuk pucanja
             audioShoot.Play();
 
             if (mag > 1)
@@ -88,9 +87,9 @@ public class Movement : MonoBehaviour
 
             RaycastHit2D hit;
             if (facingRight)
-                hit = Physics2D.Raycast(new Vector2(player.position.x + 2f, player.position.y - 0.5f), new Vector2(player.position.x + 100f, player.position.y - 0.5f));
+                hit = Physics2D.Raycast(new Vector2(player.position.x + 2f, player.position.y - 1.0f), new Vector2(player.position.x + 100f, player.position.y - 0.5f));
             else
-                hit = Physics2D.Raycast(new Vector2(player.position.x - 2f, player.position.y - 0.5f), new Vector2(player.position.x - 100f, player.position.y - 0.5f));
+                hit = Physics2D.Raycast(new Vector2(player.position.x - 2f, player.position.y - 1.0f), new Vector2(player.position.x - 100f, player.position.y - 0.5f));
 
             bool valid = hit.collider.GetComponent<Rigidbody2D>().ToString().Contains("Zombie");
             if (valid)
@@ -102,6 +101,7 @@ public class Movement : MonoBehaviour
                     int score = System.Convert.ToInt32(Score.text.Remove(0, 8));
                     score += 50;
                     Score.text = "POINTS: " + score;
+                    ScoreN = score;
                     zombie.Kill();
                 }
             }
