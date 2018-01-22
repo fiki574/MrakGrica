@@ -89,26 +89,33 @@ public class Movement : MonoBehaviour
             else if (mag == 1)
                 reload = true;
 
-            RaycastHit2D hit;
+            RaycastHit2D[] hits;
             if (facingRight)
-                hit = Physics2D.Raycast(new Vector2(player.position.x + 2f, player.position.y - 1.0f), new Vector2(player.position.x + 100f, player.position.y - 0.5f));
+                hits = Physics2D.RaycastAll(new Vector2(player.position.x + 1f, player.position.y - 1.0f), new Vector2(player.position.x + 100f, player.position.y - 1.0f));
             else
-                hit = Physics2D.Raycast(new Vector2(player.position.x - 2f, player.position.y - 1.0f), new Vector2(player.position.x - 100f, player.position.y - 0.5f));
+                hits = Physics2D.RaycastAll(new Vector2(player.position.x - 1f, player.position.y - 1.0f), new Vector2(player.position.x - 100f, player.position.y - 1.0f));
 
-            bool valid = hit.collider.GetComponent<Rigidbody2D>().ToString().Contains("Zombie");
-            if (valid)
+            RaycastHit2D hit = default(RaycastHit2D);
+            foreach(RaycastHit2D h in hits)
+            {
+                if (h.collider.GetComponent<Rigidbody2D>().ToString().Contains("Zombie"))
+                    hit = h;
+            }
+
+            if (hit != default(RaycastHit2D))
             {
                 Enemy zombie = hit.collider.GetComponent<Enemy>();
-                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("Level3"))
-                    zombie.TakeDamage(50);
-                zombie.TakeDamage(35);
-                if (zombie.GetHealth() == 0.0f)
+                if (zombie != null)
                 {
-                    int score = System.Convert.ToInt32(Score.text.Remove(0, 8));
-                    score += 50;
-                    Score.text = "POINTS: " + score;
-                    ScoreN = score;
-                    zombie.Kill();
+                    zombie.TakeDamage(35);
+                    if (zombie.GetHealth() <= 0.0f)
+                    {
+                        int score = System.Convert.ToInt32(Score.text.Remove(0, 8));
+                        score += 50;
+                        Score.text = "POINTS: " + score;
+                        ScoreN = score;
+                        zombie.Kill();
+                    }
                 }
             }
         }

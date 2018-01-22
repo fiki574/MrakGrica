@@ -5,12 +5,28 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject enemy;
-    public Transform FirstFloor, SecondFloor, ThirdFloor;
-    public Transform First, Second;
-    public Transform MinusFirst, MinusSecond, MinusThird;
+    public Transform FirstFloor, SecondFloor, ThirdFloor, GroundFloor, FirstFloor2, SecondFloor2, GroundFloor2,
+        First, Second,
+        MinusFirst, MinusSecond, MinusThird;
 
     public void CreateZombie(int amount, int floor, int level)
     {
+        if (level == 1 && floor == -1)
+            for (int i = 0; i < amount; i++)
+                Instantiate(enemy, FirstFloor2.position, FirstFloor2.rotation);
+
+        if (level == 1 && floor == -2)
+            for (int i = 0; i < amount; i++)
+                Instantiate(enemy, SecondFloor2.position, SecondFloor2.rotation);
+
+        if (level == 1 && floor == -3)
+            for (int i = 0; i < amount; i++)
+                Instantiate(enemy, GroundFloor2.position, GroundFloor2.rotation);
+
+        if (level == 1 && floor == 0)
+            for (int i = 0; i < amount; i++)
+                Instantiate(enemy, GroundFloor.position, GroundFloor.rotation);
+
         if (level == 1 && floor == 1)
             for (int i = 0; i < amount; i++)
                 Instantiate(enemy, FirstFloor.position, FirstFloor.rotation);

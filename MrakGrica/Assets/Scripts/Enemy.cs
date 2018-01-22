@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour {
     private Animator animator;
     private int moveSpeed, rotationSpeed;
     private Transform target, myTransform;
-    private Rigidbody2D testZombie;
+    
     private bool facingRight;
 
     void Awake()
@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour {
         Health = 100;
         animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        testZombie = GetComponent<Rigidbody2D>();
         facingRight = true;
     }
 
