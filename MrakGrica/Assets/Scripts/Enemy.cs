@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    private float Health;
+    private float Health, timer;
     private Animator animator;
-    private float timer;
+    private int moveSpeed, rotationSpeed;
+    private Transform target, myTransform;
+
+    void Awake()
+    {
+        myTransform = transform;
+    }
 
     void Start ()
     {
+        moveSpeed = 1;
+        rotationSpeed = 0;
         Health = 100;
         animator = GetComponent<Animator>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
+        Vector2 dir = target.position - myTransform.position;
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.FromToRotation(Vector3.right, dir), rotationSpeed * Time.deltaTime);
+        myTransform.position += (target.position - myTransform.position).normalized * moveSpeed * Time.deltaTime;
+
         RaycastHit2D detect_right, detect_left;
         Rigidbody2D zombie = gameObject.GetComponent<Rigidbody2D>(), player_left, player_right;
 
@@ -36,9 +49,7 @@ public class Enemy : MonoBehaviour {
             player = null;
 
         if (timer > 0)
-        {
             timer -= Time.deltaTime;
-        }
 
         if (player != null)
         {
@@ -47,7 +58,6 @@ public class Enemy : MonoBehaviour {
                 animator.SetTrigger("PlayerClose");
                 player.TakeDamage(15.0f);
                 timer = 2.0f;
-                //promijenit ovo nekak pošto brzo skida health zbog Update() brzine
             }
         }
     }

@@ -17,9 +17,8 @@ public class PlayCont : MonoBehaviour {
     public void TakeDamage(float amount)
     {
         Health -= amount;
+        if (Health <= 0.0f) Kill();
         HealthUI.text = System.Convert.ToInt32(Health).ToString();
-        if (Health <= 0.0f)
-            Kill();
     }
 
     public float GetHealth()

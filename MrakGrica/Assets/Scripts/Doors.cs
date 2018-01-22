@@ -13,7 +13,7 @@ public class Doors : MonoBehaviour
     private Color m_TargetScreenOverlayColor = new Color(0, 0, 0, 0);  
     private Color m_DeltaColor = new Color(0, 0, 0, 0);
     private int m_FadeGUIDepth = -1000;
-
+    
     void OnTriggerEnter2D(Collider2D collider)
     {
         CanTeleport = true;
@@ -35,6 +35,15 @@ public class Doors : MonoBehaviour
                 StartFade(Color.black, 2.5f);
                 StartCoroutine(Teleport());
             }
+
+
+        //test kod
+        if (Input.GetKeyDown("g"))
+        {
+            GameObject spawnobj = GameObject.FindGameObjectWithTag("Respawn");
+            Spawn spawn = spawnobj.GetComponent<Spawn>();
+            spawn.CreateZombie(1, 1, 1);
+        }
     }
 
     IEnumerator Teleport()
