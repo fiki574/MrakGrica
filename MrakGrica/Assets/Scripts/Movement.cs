@@ -99,7 +99,9 @@ public class Movement : MonoBehaviour
             if (valid)
             {
                 Enemy zombie = hit.collider.GetComponent<Enemy>();
-                zombie.TakeDamage(35f);
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("Level3"))
+                    zombie.TakeDamage(50);
+                zombie.TakeDamage(35);
                 if (zombie.GetHealth() == 0.0f)
                 {
                     int score = System.Convert.ToInt32(Score.text.Remove(0, 8));

@@ -39,8 +39,8 @@ public class Enemy : MonoBehaviour {
         RaycastHit2D detect_right, detect_left;
         Rigidbody2D zombie = gameObject.GetComponent<Rigidbody2D>(), player_left, player_right;
 
-        detect_right = Physics2D.Raycast(new Vector2(zombie.position.x + 1.0f, zombie.position.y), new Vector2(zombie.position.x + 2.0f, zombie.position.y));
-        detect_left = Physics2D.Raycast(new Vector2(zombie.position.x - 1.0f, zombie.position.y), new Vector2(zombie.position.x - 2.0f, zombie.position.y));
+        detect_right = Physics2D.Raycast(new Vector2(zombie.position.x + 0.65f, zombie.position.y), new Vector2(zombie.position.x + 0.7f, zombie.position.y));
+        detect_left = Physics2D.Raycast(new Vector2(zombie.position.x - 0.65f, zombie.position.y), new Vector2(zombie.position.x - 0.7f, zombie.position.y));
 
         player_right = detect_right.collider.GetComponent<Rigidbody2D>();
         player_left = detect_left.collider.GetComponent<Rigidbody2D>();
@@ -92,9 +92,9 @@ public class Enemy : MonoBehaviour {
         if (h > 0 && !facingRight || h < 0 && facingRight)
         {
             facingRight = !facingRight;
-            Vector3 theScale = transform.localScale;
+            Vector3 theScale = myTransform.localScale;
             theScale.x *= -1;
-            transform.localScale = theScale;
+            myTransform.localScale = theScale;
         }
     }
 }
