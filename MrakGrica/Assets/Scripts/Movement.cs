@@ -30,6 +30,10 @@ public class Movement : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         facingRight = true;
         mag = 7;
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("Level2") || UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("Level3"))
+        {
+            animator.SetTrigger("gun");
+        }
     }
 	private void Update()
 	{
@@ -112,7 +116,7 @@ public class Movement : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Fire1"))
 			attack = true;
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r") && !reload && !animator.GetCurrentAnimatorStateInfo(0).IsTag("walk"))
             reload = true;
 	}
 

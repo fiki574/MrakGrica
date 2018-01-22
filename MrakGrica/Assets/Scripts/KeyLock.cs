@@ -17,10 +17,13 @@ public class KeyLock : MonoBehaviour
                 DoorsOpen.Play();
             }
 
-            if (Player.GetComponent<Collider2D>().IsTouching(Key.GetComponent<Collider2D>()) && !HasKey)
+            if (Key != null)
             {
-                Destroy(Key);
-                HasKey = true;
+                if (Player.GetComponent<Collider2D>().IsTouching(Key.GetComponent<Collider2D>()) && !HasKey)
+                {
+                    Destroy(Key);
+                    HasKey = true;
+                }
             }
         }
     }

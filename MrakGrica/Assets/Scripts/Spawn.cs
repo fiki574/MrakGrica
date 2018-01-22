@@ -39,8 +39,11 @@ public class Spawn : MonoBehaviour
             Instantiate(enemy, MinusThird.position, MinusThird.rotation);
     }
 
-    void Awake()
+    private void Awake()
     {
-        CreateZombie(2, 0, 2);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+            CreateZombie(2, 0, 2);
+        }
     }
 }

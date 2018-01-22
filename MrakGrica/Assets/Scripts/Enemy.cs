@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour {
     private Animator animator;
     private int moveSpeed, rotationSpeed;
     private Transform target, myTransform;
+    private Rigidbody2D testZombie;
+    private bool facingRight;
 
     void Awake()
     {
@@ -21,6 +23,8 @@ public class Enemy : MonoBehaviour {
         Health = 100;
         animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        testZombie = GetComponent<Rigidbody2D>();
+        facingRight = true;
     }
 
     void Update()
@@ -28,6 +32,9 @@ public class Enemy : MonoBehaviour {
         Vector2 dir = target.position - myTransform.position;
         myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.FromToRotation(Vector3.right, dir), rotationSpeed * Time.deltaTime);
         myTransform.position += (target.position - myTransform.position).normalized * moveSpeed * Time.deltaTime;
+
+        animator.SetFloat("ZombieSpeed", Mathf.Abs(target.position.x - myTransform.position.x));
+        Flip(target.position.x - myTransform.position.x);
 
         RaycastHit2D detect_right, detect_left;
         Rigidbody2D zombie = gameObject.GetComponent<Rigidbody2D>(), player_left, player_right;
@@ -78,5 +85,16 @@ public class Enemy : MonoBehaviour {
     public void Kill()
     {
         Destroy(gameObject);
+    }
+
+    private void Flip(float h)
+    {
+        if (h > 0 && !facingRight || h < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 }

@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("f") && GunObj!=null)
             if (Player.GetComponent<Collider2D>().IsTouching(GunObj.GetComponent<Collider2D>()))
             {
                 Destroy(GunObj);
